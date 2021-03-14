@@ -1,0 +1,7 @@
+server:
+  port: 8778
+  tomcat:
+    uri-encoding: UTF-8
+
+logging:
+  config: classpath:logback-spring-test.xml

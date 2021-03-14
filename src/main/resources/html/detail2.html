@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <script type="text/javascript" src='../lib/jquery-1.8.min.js'></script>
+    <script type="text/javascript">
+        document.write("<script type='text/javascript' src='../js/comm.js?time=" + Date.now() + "'><\/script>");
+    </script>
+    <link rel="stylesheet" href="../css/weui.min.css"/>
+</head>
+
+<body ontouchstart>
+<div >
+    <div class="weui-form-preview">
+        <div style="height: 5%" class="weui-form-preview__item">
+            <div id="goback" style="width: 20%;padding-top: 6px;">
+                <label class="weui-form-preview__label">取消</label>
+            </div>
+            <div style="text-align: center;width: 80%">
+                <label style="font-size: 20px;">产品详情</label>
+            </div>
+        </div>
+    </div>
+    <div id="2">
+        <div class="hd" id="fail2">
+            <img style="display: inline-block; width: 100%; max-width: 100%; height: auto;" src="../img/2.jpg"/>
+        </div>
+        <div id="main2">
+            <div id="suc2">
+                <div class="">
+                    <div class="weui-form-preview__bd">
+                        <div class="weui-form-preview__item">
+                            <label class="weui-form-preview__label">产品名称：</label>
+                            <em class="weui-form-preview__value" >产品2</em>
+                        </div>
+                        <div class="weui-form-preview__item">
+                            <label class="weui-form-preview__label">产品描述：</label>
+                            <span class="weui-form-preview__value" >这是产品描述这是产品描述这是产品描述这是产品描述这是产品描述这是产品描述这是产品描述这是产品描述这是产品描述</span>
+                        </div>
+                        <div class="weui-form-preview__item">
+                            <label class="weui-form-preview__label">产品价格：</label>
+                            <span class="weui-form-preview__value">200元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 30px;margin-top: 30px;" class="weui-form-preview__bd">
+        <div class="weui-form-preview__item">
+            <input id="check" type="checkbox">同意本次支付，支付成功后暂不支持退款，如有疑问，请勿进行下一步操作。</input>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button type="button" class="yongyin" onclick="pay()" style="width:100px; height:30px;">确认支付</button>
+    </div>f
+    <div style="height: 50px;">
+        <input type="hidden" id="amt" value="1">
+    </div>
+</div>
+
+<script>
+    $('#goback').click(function () {
+        window.history.go(-1);
+    })
+</script>
+</body>
+<style>
+    .yongyin {
+        width: 100px;
+        text-align: center;
+        line-height: 100%;
+        padding: 0.3em;
+        font: 16px Arial, sans-serif bold;
+        font-style: normal;
+        text-decoration: none;
+        margin: 2px;
+        vertical-align: text-bottom;
+        zoom: 1;
+        outline: none;
+        font-size-adjust: none;
+        font-stretch: normal;
+        border-radius: 50px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+        color: #fefee9;
+        border: 0.2px solid #2299ff;
+        background-repeat: repeat;
+        background-size: auto;
+        background-origin: padding-box;
+        background-clip: padding-box;
+        background-color: #3399ff;
+        background: linear-gradient(to bottom, #eeeff9 0%, #3399ff 100%);
+    }
+    .banner {
+        text-align: center;
+    }
+
+    .hd {
+        height: 10%;
+        width: 100%;
+        /*background: #19CAAD;*/
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        /*padding: 2vh;*/
+    }
+
+    .banner h4 {
+        font-size: 5.5vw;
+        line-height: 7vw;
+        font-weight: 400;
+        color: white;
+    }
+
+    /*#fail,*/
+    /*#success {*/
+    /*    display: none;*/
+    /*}*/
+
+    .query_btn {
+        margin: 20vh 10vw 0;
+    }
+
+    .weui-btn_primary {
+        background: #19CAAD;
+    }
+
+    .weui-btn_primary:not(.weui-btn_disabled):active {
+        color: hsla(0, 0%, 100%, .6);
+        background-color: #19CAAD;
+    }
+
+    #main {
+        margin-top: 5vh;
+    }
+
+    /*#main>div {*/
+    /*    display: none;*/
+    /*}*/
+</style>
+<script>
+    // //提取参数
+    // var par = getRequest();
+    // if (par.respcode && par.respcode == '1') {
+    //     $('#success').show();
+    //     //回填成功信息
+    //     $("#title").html(par.mdesc);
+    //     $("#time").html(par.tradetime);
+    //     $("#money").html(par.tradeamt ? '¥ ' + par.tradeamt : "");
+    //     $("#code_suc").html(par.tradeno);
+    //     $('#suc').show();
+    // } else {
+    //     $('#fail').show();
+    //     //回填失败信息
+    //     $("#code_no").html(par.errorcode);
+    //     $("#info").html(par.errormsg);
+    //     $('#fai').show();
+    // }
+</script>
+
+</html>
