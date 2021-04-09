@@ -30,9 +30,12 @@ import java.util.*;
 @RequestMapping("/wxpay")
 public class WxController {
 
-    String appid = "wxde94a63529b9b709";
+//    String appid = "wxde94a63529b9b709";
+//
+//    String secret = "744225e226dede8dc663ceba20205dc5";
+    String appid = "wx45bfd625a76f45df";
 
-    String secret = "744225e226dede8dc663ceba20205dc5";
+    String secret = "8737a5954e85fc247a07e87b5ada203b";
 
     //第一步授权url
     String authorizeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?";
@@ -46,7 +49,7 @@ public class WxController {
     String userUrl = "https://api.weixin.qq.com/sns/userinfo?";
 
     //重定向至首页
-    String indexUrl = "https://mtest.eycard.cn/wxpay/index.html";
+    String indexUrl = "https://mtest.eycard.cn/wxpay/html/index.html";
 
     @RequestMapping("/start")
     public void start(HttpServletRequest request, HttpServletResponse response) throws Exception {

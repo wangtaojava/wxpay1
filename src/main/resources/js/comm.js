@@ -1,4 +1,6 @@
 function pay(){
+    alert("当前暂不支持支付功能");
+    return;
     var check = $("#check")[0].checked;
     if(!check){
         alert("请勾选同意条款");
@@ -73,4 +75,13 @@ function wxpay(data) {
     } else {
         onBridgeReady();
     }
+}
+
+function toIndex(){
+    var check = $("#check")[0].checked;
+    if(!check){
+        alert("请勾选同意条款");
+        return;
+    }
+    window.location = "https://mtest.eycard.cn/wxpay/start";
 }
